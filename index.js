@@ -26,7 +26,10 @@ server.on('message', (msg, rinfo) => {
             console.log('cleaned up client ' + key);
             delete clients[key];
         });
-        console.log(JSON.stringify(clients, undefined, 2));
+
+        if (clientsToDelete.length) {
+            console.log(JSON.stringify(clients, undefined, 2));
+        }
 
         lastCleanupTime = new Date();
     }
