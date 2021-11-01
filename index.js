@@ -26,6 +26,7 @@ server.on('message', (msg, rinfo) => {
             console.log('cleaned up client ' + key);
             delete clients[key];
         });
+        console.log(JSON.stringify(clients, undefined, 2));
 
         lastCleanupTime = new Date();
     }
@@ -59,8 +60,6 @@ server.on('message', (msg, rinfo) => {
             }
 
             client.connections.push(newConnection(clientId, clientPort, packetId));
-            console.log('connection did not exist yet');
-            console.log(JSON.stringify(clients, undefined, 2));
         }
     }
 
