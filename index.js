@@ -58,7 +58,7 @@ server.on('message', (msg, rinfo) => {
         if (!connection) {
             client.connections = client.connections.filter(conn => new Date() - conn.lastReceived < 10000);
 
-            if (client.connections.length >= 5) {
+            if (client.connections.length >= 10) {
                 return;
             }
 
